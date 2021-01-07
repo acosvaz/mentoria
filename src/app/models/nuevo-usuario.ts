@@ -1,27 +1,27 @@
 export class NuevoUsuario {
     nombre: string;
-    tipo: string;
+    tipo_user: string;
     username: string;
     password: string;
     matricula: string;
     carrera: string;
-    semestre: string;
+    correo: string;
+    telefono: string;
+    promedio: string;
     grupo: string;
-    edad: string;
-    sexo: string;
     // created_at: number;
 
-    constructor(nombre: string, username: string, password: string, matricula: string, carrera: string, semestre: string, grupo:string, edad: string, sexo: string) {
+    constructor(nombre: string, username: string, password: string, matricula: string, carrera: string, correo: string, telefono:string, promedio: string, grupo: string) {
         this.nombre = nombre;
-        this.tipo = 'user';
+        this.tipo_user = 'user';
         this.username = username;
         this.password = password;
         this.matricula = matricula;
         this.carrera = carrera;
-        this.semestre = semestre;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.promedio = promedio;
         this.grupo = grupo;
-        this.edad = edad;
-        this.sexo = sexo;
        // this.created_at = new Date().getDate();
     }
 }

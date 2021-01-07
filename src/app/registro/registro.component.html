@@ -31,25 +31,23 @@
         </div>
 
         <div class="form-group">
-          <label for="semestre">Semestre:</label>
-          <input class="form-control" type="text" name="semestre" maxlength="2" placeholder="2" [(ngModel)]="form.semestre" #semestre="ngModel" autocomplete="off" required>
+          <label for="semestre">Correo:</label>
+          <input class="form-control" type="text" name="Correo"  placeholder="2" [(ngModel)]="form.Correo" #semestre="ngModel" autocomplete="off" required>
         </div>
 
        <div class="form-group">
-          <label for="grupo">Grupo:</label>
-          <input class="form-control" type="text" placeholder="ISMA-1" name="grupo" [(ngModel)]="form.grupo" #grupo="ngModel" autocomplete="off" required>
+          <label for="grupo">Telefono:</label>
+          <input class="form-control" type="text" name="telefono" [(ngModel)]="form.telefono" #grupo="ngModel" autocomplete="off" required>
         </div>
 
        <div class="form-group">
-          <label for="edad">Edad:</label>
-          <input class="form-control" type="text" name="edad" maxlength="2" placeholder="19" [(ngModel)]="form.edad" #edad="ngModel" autocomplete="off" required>
+          <label for="edad">Promedio:</label>
+          <input class="form-control" type="text" name="promedio"  [(ngModel)]="form.promedio" #edad="ngModel" autocomplete="off" required>
         </div>
 
        <div class="form-group">
-          <label for="sexo">Sexo:</label>
-		  <select class="form-control" name="sexo" [(ngModel)]="form.sexo" required>
-   			<option *ngFor="let item of listTwo">{{item}}</option>
-    	  </select>
+          <label for="sexo">Grupo:</label>
+          <input class="form-control" type="text" name="grupo" [(ngModel)]="form.grupo" #edad="ngModel" autocomplete="off" required>
         </div>
 
         <div class="form-group">
