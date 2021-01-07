@@ -1,0 +1,63 @@
+    <div class="container">
+      <h3 class="mb-4">Registrarse</h3>
+      <form name="form" #f="ngForm" style="max-width: 500px;" (ngSubmit)="onRegister()" novalidate>
+  
+        <div class="form-group">
+          <label for="nombre">Nombre Completo:</label>
+          <input class="form-control" name="nombre" type="text" placeholder="Juan Reyes Hidalgo" [(ngModel)]="form.nombre" #nombre="ngModel" autocomplete="off" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="username">Usuario:</label>
+          <input class="form-control" name="username" type="text" placeholder="JUAN-REYES" [(ngModel)]="form.username"
+            #username="ngModel" autocomplete="off" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Contraseña:</label>
+          <input class="form-control" name="password" type="password" placeholder="150204020" [(ngModel)]="form.password" #password="ngModel" required>
+        </div>
+  
+        <div class="form-group">
+          <label for="matricula">Matricula:</label>
+          <input class="form-control" type="text" name="matricula" maxlength="9" placeholder="150204020" [(ngModel)]="form.matricula" #matricula="ngModel" autocomplete="off" required>
+        </div>
+
+        <div class="form-group">
+          <label for="carrera">Carrera:</label>
+		  <select class="form-control" name="carrera" [(ngModel)]="form.carrera" required>
+   			<option *ngFor="let item of listOne">{{item}}</option>
+    	  </select>
+        </div>
+
+        <div class="form-group">
+          <label for="semestre">Semestre:</label>
+          <input class="form-control" type="text" name="semestre" maxlength="2" placeholder="2" [(ngModel)]="form.semestre" #semestre="ngModel" autocomplete="off" required>
+        </div>
+
+       <div class="form-group">
+          <label for="grupo">Grupo:</label>
+          <input class="form-control" type="text" placeholder="ISMA-1" name="grupo" [(ngModel)]="form.grupo" #grupo="ngModel" autocomplete="off" required>
+        </div>
+
+       <div class="form-group">
+          <label for="edad">Edad:</label>
+          <input class="form-control" type="text" name="edad" maxlength="2" placeholder="19" [(ngModel)]="form.edad" #edad="ngModel" autocomplete="off" required>
+        </div>
+
+       <div class="form-group">
+          <label for="sexo">Sexo:</label>
+		  <select class="form-control" name="sexo" [(ngModel)]="form.sexo" required>
+   			<option *ngFor="let item of listTwo">{{item}}</option>
+    	  </select>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary mb-3" [disabled]="!f.valid">Crear Cuenta</button>
+          <div *ngIf="f.submitted && isRegisterFail" class="alert alert-danger">Fail al crear cuenta: {{ errorMsg }}</div>
+        </div>
+
+
+      </form>
+      </div>
+

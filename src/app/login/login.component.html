@@ -1,0 +1,35 @@
+<div *ngIf="isLogged; else loggedOut">
+
+<div *ngIf="authority === 'jefe'" class="jumbotron container">
+  <h1 class="display-4">¡Bienvenido!</h1>
+  <p class="lead">{{nombre}}</p>
+  <hr class="my-4">
+  <p>Iniciaste sesión con el Instituto Tecnológico Superior de Escárcega.</p>
+  <p>Lee las frases de cada grupo antes de hacer su eleccion y marca la que describa. ¿Cómo te has setido en ésta última semana, incluso hoy?</p> 
+  <a class="btn btn-primary btn-lg btn-block" routerLink="/test" role="button">Comenzar Test</a>
+</div>
+
+</div>
+
+<ng-template #loggedOut>
+ <div *ngIf="!isLogged" class="container">
+    <h5>Iniciar Sesión</h5>
+    <form name="form" #f="ngForm" novalidate (ngSubmit)="onLogin()">
+      <div class="form-group">
+        <label for="username">Nombre de Usuario: </label>
+        <input type="text" class="form-control" name="username" [(ngModel)]="form.username" 
+        autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña: </label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="form.password" 
+        autocomplete="off" required>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success" [disabled]="!f.valid">Login</button>
+        <div *ngIf="f.submitted && isLoginFail" class="alert alert-danger mt-3">Fail al loguearse: {{ errorMsg }}</div>
+        <a routerLink="/registro"><button class="btn btn-primary float-right">Crear Cuenta</button></a>
+        <p class="float-right mr-3">¿No tienes cuenta?</p>
+      </div>
+    </form>
+  </div></ng-template>
